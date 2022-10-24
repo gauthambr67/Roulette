@@ -5,64 +5,75 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roulette</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../Roulette/style.css" />
+    <script defer src="../Roulette/code.js"></script>
   </head>
   <body>
     <div>
-      <h1 class="header">ROULETTE<br />SPIN AND WIN!</h1>
-      <h2 class="header2">
-        Feeling Lucky? <br />
-        Spin the wheel and win big! <br />
-        Ready to roll the Roulette? <br />
-      </h2>
-      <img src="https://i.imgur.com/l392L6Q.jpg" class="img1" />
+      <h1 class="header">ROULETTE</h1>
+      <h2 class="header2">SPIN THE WHEEL TO WIN BIG!</h2>
+      <img src="https://i.imgur.com/l392L6Q.jpg" class="img" />
     </div>
     <div class="betOptions">
-      <h2>Take a good look at the Roulette table below: <br /></h2>
-      <img src="https://i.imgur.com/ewMFOrk.png" class="img2" />
-      <h2 class="menu">
-        You have 100 coins that you can use to place a bet. <br />
+      <h2 class="header3">
+        Take a good look at the Roulette table below: <br />
       </h2>
+      <img src="https://i.imgur.com/ewMFOrk.png" class="img" />
+
       <ol>
         <h3>
           You can place a bet by choosing the betting number option from the
           list below:
         </h3>
-        <li>Straight up - Any single number including 0</li>
-        <li>Split - Any two adjoining numbers - vertical or horizontal</li>
-        <li>Basket - "0, 1, 2" or "0, 2, 3"</li>
-        <li>Street - Any three numbers horizontal(1,2,3 or 4,5,6, etc.)</li>
-        <li>
-          Corner - Any four adjoining numbers in a block (eg. 17,18,20,21)
-        </li>
-        <li>
-          Six Line - Any six numbers from two rows (eg. 28,29,30,31,32,33)
-        </li>
-        <li>1st Column - 1,4,7,10,13,16,19,22,25,28,31,34</li>
-        <li>2nd Column - 2,5,8,11,14,17,20,23,26,29,32,35</li>
-        <li>3rd Column - 3,6,9,12,15,18,21,24,27,30,33,36</li>
-        <li>1st Dozen - 1 through 12</li>
-        <li>2nd Dozen - 13 through 24</li>
-        <li>3rd Dozen - 25 through 36</li>
-        <li>Odd - 1,3,5,...,35</li>
-        <li>Even - 2,4,6,...,36</li>
-        <li>Red - Red Numbers</li>
-        <li>Black - Black Numbers</li>
-        <li>1 to 18 - 1,2,3,...,18</li>
-        <li>19 to 36 - 19,20,21,...,36</li>
+        <div class="menu">
+          <li>Basket - "0, 1, 2, or 3" (Odds: 11 to 1)</li>
+          <li>
+            1st Column - 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34 (Odds: 2 to
+            1)
+          </li>
+          <li>
+            2nd Column - 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35 (Odds: 2 to
+            1)
+          </li>
+          <li>
+            3rd Column - 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36 (Odds: 2 to
+            1)
+          </li>
+          <li>1st Dozen - 1 through 12 (Odds: 2 to 1)</li>
+          <li>2nd Dozen - 13 through 24 (Odds: 2 to 1)</li>
+          <li>3rd Dozen - 25 through 36 (Odds: 2 to 1)</li>
+          <li>Odd - 1, 3, 5,..., 35 (Odds: 1 to 1)</li>
+          <li>Even - 2, 4, 6,..., 36 (Odds: 1 to 1)</li>
+          <li>Red - Red Numbers (Odds: 1 to 1)</li>
+          <li>Black - Black Numbers (Odds: 1 to 1)</li>
+          <li>1 to 18 - 1, 2, 3,..., 18 (Odds: 1 to 1)</li>
+          <li>19 to 36 - 19, 20, 21,..., 36 (Odds: 1 to 1)</li>
+        </div>
       </ol>
     </div>
+
     <div class="choice">
       <h2>Enter your choice from the options mentioned above:</h2>
       <input type="number" />
+      <button id="choice" type="button" onclick="getChoice();">
+        Enter Choice
+      </button>
     </div>
-    <div class="ranVal">
+    <div>
+      <h2>How many dollars do you want to bet:</h2>
+      <button type="button" id="bet" onclick="getBet">BET</button>
+      <br />
+    </div>
+    <div class="spin">
       <h2>Press the button below to spin the wheel and test your luck!</h2>
       <button id="spin">SPIN</button>
-      <h2>The outcome of the spin is:</h2>
-      <h1 class="outcome"></h1>
     </div>
-    <div class="result"></div>
-    <script src="../Roulette/code.js"></script>
+    <div class="result" id="message">Message</div>
   </body>
 </html>

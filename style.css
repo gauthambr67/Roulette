@@ -1,8 +1,48 @@
+html {
+  font-family: "Nanum Myeongjo", serif;
+}
 body {
   background-color: darkslategrey;
   color: beige;
+  text-align: center;
+}
+
+.header2 {
+  color: black;
+  padding: 5px;
 }
 
 h1 {
   color: white;
+}
+
+.img {
+  display: block;
+  width: 600 px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu {
+  text-align: left;
+  color: whitesmoke;
+  word-spacing: 5px;
+  line-height: 1.6;
+  font-size: larger;
+}
+
+ol {
+  text-align: left;
+  color: whitesmoke;
+}
+
+#bet:hover {
+  background-color: blue;
+}
+#choice:hover {
+  background-color: orange;
+}
+#spin:hover {
+  background-color: red;
 }
