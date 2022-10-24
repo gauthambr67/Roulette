@@ -1,8 +1,9 @@
-//let bet = 0;
-//let pay = 0; //these are the winnings of a round
-let uChoice = getElementById("choice").value;
-let uBet = getElementById("bet").value;
-let messageEl = "";
+let choiceEl = document.querySelector("#choice");
+let betEl = document.querySelector("#bet");
+let btnSub = document.querySelector("#submit");
+let wMessageEl = document.querySelector("#wMessage");
+let lMessageEl = document.querySelector("#lMessage");
+let wheelEl = document.querySelector("#wheel");
 
 let basketNum = [0, 1, 2, 3];
 let column1 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34];
@@ -28,48 +29,44 @@ let half2 = [
   19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
 ];
 
-document.getElementById("message").innerHTML = messageEl;
-
 let messageWin = function (pay) {
-  messageEl = `Congratulations! You won ${pay} dollars!`;
+  wMessageEl.innerText = `Congratulations! You won ${pay} dollars!`;
 };
 
 let messageLoss = function () {
-  messageEl = `Oh snap! You lost the bet!`;
+  lMessageEl.innerText = `Oh snap! You lost the bet!`;
 };
 
 function outcome() {
   let ranVal = Math.floor((Math.random() * 37) | 0);
-
-  if (choice === 1) {
-    basketNum.includes(ranVal) ? messageWin(11 * bet) : messageLoss();
-  } else if (choice === 2) {
-    column1.includes(ranVal) ? messageWin(2 * bet) : messageLoss();
-  } else if (choice === 3) {
-    column2.includes(ranVal) ? messageWin(2 * bet) : messageLoss();
-  } else if (choice === 4) {
-    column3.includes(ranVal) ? messageWin(2 * bet) : messageLoss();
-  } else if (choice === 5) {
-    dozen1.includes(ranVal) ? messageWin(2 * bet) : messageLoss();
-  } else if (choice === 6) {
-    dozen2.includes(ranVal) ? messageWin(2 * bet) : messageLoss();
-  } else if (choice === 7) {
-    dozen3.includes(ranVal) ? messageWin(2 * bet) : messageLoss();
-  } else if (choice === 8) {
-    oddNum.includes(ranVal) ? messageWin(bet) : messageLoss();
-  } else if (choice === 9) {
-    evenNum.includes(ranVal) ? messageWin(bet) : messageLoss();
-  } else if (choice === 10) {
-    redNum.includes(ranVal) ? messageWin(bet) : messageLoss();
-  } else if (choice === 11) {
-    blackNum.includes(ranVal) ? messageWin(bet) : messageLoss();
-  } else if (choice === 12) {
-    half1.includes(ranVal) ? messageWin(bet) : messageLoss();
-  } else if (choice === 13) {
-    half2.includes(ranVal) ? messageWin(bet) : messageLoss();
+  wheelEl.innerText = `The number on the wheel is: ${ranVal}`;
+  if (choiceEl.value == 1) {
+    basketNum.includes(ranVal) ? messageWin(11 * betEl.value) : messageLoss();
+  } else if (choiceEl.value == 2) {
+    column1.includes(ranVal) ? messageWin(2 * betEl.value) : messageLoss();
+  } else if (choiceEl.value == 3) {
+    column2.includes(ranVal) ? messageWin(2 * betEl.value) : messageLoss();
+  } else if (choiceEl.value == 4) {
+    column3.includes(ranVal) ? messageWin(2 * betEl.value) : messageLoss();
+  } else if (choiceEl.value == 5) {
+    dozen1.includes(ranVal) ? messageWin(2 * betEl.value) : messageLoss();
+  } else if (choiceEl.value == 6) {
+    dozen2.includes(ranVal) ? messageWin(2 * betEl.value) : messageLoss();
+  } else if (choiceEl.value == 7) {
+    dozen3.includes(ranVal) ? messageWin(2 * betEl.value) : messageLoss();
+  } else if (choiceEl.value == 8) {
+    oddNum.includes(ranVal) ? messageWin(betEl.value) : messageLoss();
+  } else if (choiceEl.value == 9) {
+    evenNum.includes(ranVal) ? messageWin(betEl.value) : messageLoss();
+  } else if (choiceEl.value == 10) {
+    redNum.includes(ranVal) ? messageWin(betEl.value) : messageLoss();
+  } else if (choiceEl.value == 11) {
+    blackNum.includes(ranVal) ? messageWin(betEl.value) : messageLoss();
+  } else if (choiceEl.value == 12) {
+    half1.includes(ranVal) ? messageWin(betEl.value) : messageLoss();
+  } else if (choiceEl.value == 13) {
+    half2.includes(ranVal) ? messageWin(betEl.value) : messageLoss();
   }
 }
 
-form.addEventListener("submit", outcome);
-
-alert("messageWin");
+btnSub.addEventListener("click", outcome);
