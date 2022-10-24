@@ -58,22 +58,16 @@
       </ol>
     </div>
 
-    <div class="choice">
-      <h2>Enter your choice from the options mentioned above:</h2>
-      <input type="number" />
-      <button id="choice" type="button" onclick="getChoice();">
-        Enter Choice
-      </button>
-    </div>
-    <div>
-      <h2>How many dollars do you want to bet:</h2>
-      <button type="button" id="bet" onclick="getBet">BET</button>
-      <br />
-    </div>
-    <div class="spin">
+    <form id="form">
+      <h2>Enter your choice from the options mentioned above (1-13):</h2>
+      <input id="choice" type="number" max="13" min="1" /> <br />
+
+      <h2>How many dollars do you want to bet (10-100):</h2>
+      <input id="bet" type="number" max="100" min="10" /> <br />
+
       <h2>Press the button below to spin the wheel and test your luck!</h2>
-      <button id="spin">SPIN</button>
-    </div>
-    <div class="result" id="message">Message</div>
+      <button type="submit" id="submit">SPIN</button>
+    </form>
+    <div id="message"><h1></h1></div>
   </body>
 </html>

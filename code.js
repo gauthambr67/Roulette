@@ -1,5 +1,9 @@
-let bet = 0;
-let pay = 0; //these are the winnings of a round
+//let bet = 0;
+//let pay = 0; //these are the winnings of a round
+let uChoice = getElementById("choice").value;
+let uBet = getElementById("bet").value;
+let messageEl = "";
+
 let basketNum = [0, 1, 2, 3];
 let column1 = [1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34];
 let column2 = [2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35];
@@ -24,20 +28,15 @@ let half2 = [
   19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36,
 ];
 
-let messageEl = document.getElementById("message");
+document.getElementById("message").innerHTML = messageEl;
 
 let messageWin = function (pay) {
-  messageEl = `Congratulation! You won ${pay} dollars!`;
+  messageEl = `Congratulations! You won ${pay} dollars!`;
 };
 
 let messageLoss = function () {
   messageEl = `Oh snap! You lost the bet!`;
 };
-
-function getChoice() {
-  choice = document.getElementById("choice").value;
-  alert(choice);
-}
 
 function outcome() {
   let ranVal = Math.floor((Math.random() * 37) | 0);
@@ -70,3 +69,7 @@ function outcome() {
     half2.includes(ranVal) ? messageWin(bet) : messageLoss();
   }
 }
+
+form.addEventListener("submit", outcome);
+
+alert("messageWin");
